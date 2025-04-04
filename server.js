@@ -73,14 +73,17 @@ newCourseName="";
 newCourseCode="";
 newProgression="";
 newSyllabus="";
+
+res.redirect("/");
 }
+else {
   res.render("addcourse.ejs", {
     errors:errors,
     newCourseCode: newCourseCode,
     newCourseName: newCourseName,
     newProgression: newProgression,
     newSyllabus: newSyllabus
-  });
+  });}
 });
 
 //starta
