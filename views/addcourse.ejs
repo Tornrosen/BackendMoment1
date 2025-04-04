@@ -38,11 +38,18 @@
     </nav></div></header>   
     <h2>Lägg till kurs</h2> 
     <div id="formContainer">
-    <form><div class="form"><label for="courseName">Kursnamn: </label><input type="text" id="courseName"></div>
-    <div class="form"><label for="courseCode">Kurskod: </label><input type="text" id="courseCode"></div>
-    <div class="form"><label for="progression">Progression: </label><input type="text" id="progression"></div>
-    <div class="form"><label for="syllabus">Kursplan: </label><input type="text" id="syllabus"></div>
-    <div class="form"><button type="button" id="formBtn">Skicka in!</button></div></form></div>
+    <form method="post"><div class="form"><label for="courseName">Kursnamn: </label><input type="text" id="courseName" name="courseName" value="<%=newCourseName%>"></div>
+    <div class="form"><label for="courseCode">Kurskod: </label><input type="text" id="courseCode" name="courseCode" value="<%=newCourseCode%>"></div>
+    <div class="form"><label for="progression">Progression: </label><input type="text" id="progression" name="progression" value="<%=newProgression%>"></div>
+    <div class="form"><label for="syllabus">Kursplan: </label><input type="text" id="syllabus" name="syllabus" value="<%=newSyllabus%>"></div>
+    <% if(locals.errors.length > 0) {%>
+        <ul>
+        <% errors.forEach((error) => {%>
+            <li> <%= error %></li>
+       <% });%>
+    </ul>
+    <% } %>
+    <div class="form"><input type="submit" id="formBtn" value="Skicka in!"></div></form></div>
     <footer></footer>
     <script src="/js/main.js" type="module"></script> 
 </body>

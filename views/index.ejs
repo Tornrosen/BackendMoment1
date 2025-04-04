@@ -38,13 +38,13 @@
 </nav></div></header> 
   <h2>Kurslista</h2> 
   <div id="courseList">
-    <% if (courseList.length>0) {%>
-       <% courseList.foreach((course) => { %>
+    <% if (courseListEl.length>0) {%>
+       <% courseListEl.forEach((course) => { %>
         <article>
-            <h3><% course.courseName %></h3>
-            <p>Kurskod: <%course.courseCode %></p>
-            <p>Progression: <%course.progression %></p>
-            <p>Kursplan: <%course.syllabus %></p>
+            <h3><%= course.courseName %></h3>
+            <p>Kurskod: <%=course.courseCode %></p>
+            <p>Progression: <%=course.progression %></p>
+            <p>Kursplan: <%=course.syllabus %></p>
         </article>
         <%});%>
     <% } else {%>

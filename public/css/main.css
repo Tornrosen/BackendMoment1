@@ -26,6 +26,11 @@ h2 {
     text-align: center;
 }
 
+h3 {
+    font-size: 1.2em;
+    text-align: center;
+}
+
 #headMenu {
     list-style-type: none;
     font-size: 1.1em;
@@ -37,8 +42,9 @@ p {
     padding: 1%;
     text-align: center;
 }
+
 li {
-    display:inline;
+    display: inline;
 }
 
 li a {
