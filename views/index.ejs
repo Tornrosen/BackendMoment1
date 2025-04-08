@@ -1,55 +1,70 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
     <title>Startsida</title>
 </head>
+
 <body>
-  <header> <div class="flexContainer">
-    <h1>Kurser</h1><button class="menuBtn open" id="openMenu">
-    <span class="menuIcon">
-        <span class="bars"></span>
-        <span class="bars"></span>
-        <span class="bars"></span></span>
-    <span class="menuText">Meny</span>
-</button>
-<nav id="navMenu">
-    <ul>
-        <li><a href="/">Startsida</a></li>
-        <li><a href="/addcourse">Lägg till kurs</a></li>
-        <li><a href="/about">Om webbplatsen</a></li>
-    </ul>
-    <button class="menuBtn close" id="closeMenu">
-        <span class="menuIcon">
-            <span class="bars cross1"></span>
-            <span class="bars cross2"></span>
-        </span>
-        <span class="menuText">Stäng</span>
-    </button>
-</nav>
-<nav id="headMenu">
-    <ul>
-        <li><a class="active" href="/">Startsida</a></li>
-        <li><a href="/addcourse">Lägg till kurs</a></li>
-        <li><a href="/about">Om webbplatsen</a></li>
-    </ul>
-</nav></div></header> 
-  <main><h2>Kurslista</h2> 
-  <div id="courseList">
-    <% if (courseListEl.length>0) {%>
-       <% courseListEl.forEach((course) => { %>
-        <article>
-            <h3><%= course.courseName %></h3>
-            <p>Kurskod: <%=course.courseCode %> Progression: <%=course.progression %> Kursplan: <%=course.syllabus %></p>
-        </article>
-        <%});%>
-    <% } else {%>
-        <p>Inga kurser är tillagda än.</p>
-        <% } %>
-  </div>
-  <footer><p>Skapad av Anna Danielsson</p> </footer></main>
-  <script src="/js/main.js" type="module"></script>
+    <header>
+        <div class="flexContainer">
+            <h1>Kurser</h1><button class="menuBtn open" id="openMenu">
+                <span class="menuIcon">
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                    <span class="bars"></span></span>
+                <span class="menuText">Meny</span>
+            </button>
+            <nav id="navMenu">
+                <ul>
+                    <li><a href="/">Startsida</a></li>
+                    <li><a href="/addcourse">Lägg till kurs</a></li>
+                    <li><a href="/about">Om webbplatsen</a></li>
+                </ul>
+                <button class="menuBtn close" id="closeMenu">
+                    <span class="menuIcon">
+                        <span class="bars cross1"></span>
+                        <span class="bars cross2"></span>
+                    </span>
+                    <span class="menuText">Stäng</span>
+                </button>
+            </nav>
+            <nav id="headMenu">
+                <ul>
+                    <li><a class="active" href="/">Startsida</a></li>
+                    <li><a href="/addcourse">Lägg till kurs</a></li>
+                    <li><a href="/about">Om webbplatsen</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h2>Kurslista</h2>
+        <div id="courseList">
+            <% if (locals.rows.length>0) {%>
+                <% locals.rows.forEach((course)=> { %>
+                    <article class="courseContent">
+                        <h3>
+                            <%= course.coursename %>
+                        </h3>
+                        <p><u>Kurskod</u>: <%=course.coursecode %> <u>Progression</u>: <%=course.progression %>
+                                    <br><u>Kursplan</u>: <%=course.syllabus %>
+                        </p>
+                        <p><a href="/delete/<%=course.id%>" id="deleteBtn">Radera kurs</a></p>
+                    </article>
+                    <%});%>
+                        <% } else {%>
+                            <p>Inga kurser är tillagda än.</p>
+                            <% } %>
+        </div>
+        <footer>
+            <p>Skapad av Anna Danielsson</p>
+        </footer>
+    </main>
+    <script src="/js/main.js" type="module"></script>
 </body>
+
 </html>

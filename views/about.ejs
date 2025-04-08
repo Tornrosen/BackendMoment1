@@ -1,44 +1,62 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
     <title>Om webbplatsen</title>
 </head>
+
 <body>
-  <header> <div class="flexContainer">
-    <h1>Kurser</h1><button class="menuBtn open" id="openMenu">
-    <span class="menuIcon">
-        <span class="bars"></span>
-        <span class="bars"></span>
-        <span class="bars"></span></span>
-    <span class="menuText">Meny</span>
-</button>
-<nav id="navMenu">
-    <ul>
-        <li><a href="/">Startsida</a></li>
-        <li><a href="/addcourse">Lägg till kurs</a></li>
-        <li><a href="/about">Om webbplatsen</a></li>
-    </ul>
-    <button class="menuBtn close" id="closeMenu">
-        <span class="menuIcon">
-            <span class="bars cross1"></span>
-            <span class="bars cross2"></span>
-        </span>
-        <span class="menuText">Stäng</span>
-    </button>
-</nav>
-<nav id="headMenu">
-    <ul>
-        <li><a href="/">Startsida</a></li>
-        <li><a href="/addcourse">Lägg till kurs</a></li>
-        <li><a class="active" href="/about">Om webbplatsen</a></li>
-    </ul>
-</nav></div></header> 
- <main> <h2>Om webbplatsen</h2> 
-    <p>Webbplatsen har skapats med hjälp av MySQL som databashanterare...</p>
-  <footer><p>Skapad av Anna Danielsson</p></footer></main>
-  <script src="/js/main.js" type="module"></script>
+    <header>
+        <div class="flexContainer">
+            <h1>Kurser</h1><button class="menuBtn open" id="openMenu">
+                <span class="menuIcon">
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                    <span class="bars"></span></span>
+                <span class="menuText">Meny</span>
+            </button>
+            <nav id="navMenu">
+                <ul>
+                    <li><a href="/">Startsida</a></li>
+                    <li><a href="/addcourse">Lägg till kurs</a></li>
+                    <li><a href="/about">Om webbplatsen</a></li>
+                </ul>
+                <button class="menuBtn close" id="closeMenu">
+                    <span class="menuIcon">
+                        <span class="bars cross1"></span>
+                        <span class="bars cross2"></span>
+                    </span>
+                    <span class="menuText">Stäng</span>
+                </button>
+            </nav>
+            <nav id="headMenu">
+                <ul>
+                    <li><a href="/">Startsida</a></li>
+                    <li><a href="/addcourse">Lägg till kurs</a></li>
+                    <li><a class="active" href="/about">Om webbplatsen</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h2>Om webbplatsen</h2>
+        <p id="aboutText">Denna webbplats har som syfte att kunna spara och visa samt radera kurser.
+            Kurserna sparas i en databas.<br><br>
+            Webbplatsen har skapats med hjälp av MySQL som databasserver/databashanterare och med mysql som
+            databasanslutning/npm-paket.<br><br>
+            Jag upplever att uppgiften krävde tid att lära sig då den hade många småsaker som kunde bli fel, och lite ny
+            syntax. <br> <br>
+            Exempelvis var det lite pillrigt när man skulle skriva ejs-kod, men det känns
+            väldigt användbart och värt att lägga extra tid på. <br> <br>Det känns som att man kan åstadkomma mycket med
+            relativt lite kod. Känns roligt att lära sig! </p>
+        <footer>
+            <p>Skapad av Anna Danielsson</p>
+        </footer>
+    </main>
+    <script src="/js/main.js" type="module"></script>
 </body>
+
 </html>

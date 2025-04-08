@@ -1,27 +1,31 @@
 body {
     background-color: lavenderblush;
     color: darkslategray;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight:bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
     margin: 0 auto;
     overflow-x: hidden;
 }
 
-header, footer {
+header,
+footer {
     padding: 0.3%;
     background-color: lavender;
 }
 
-#navMenu, .menuBtn {
-display: none;
+#navMenu,
+.menuBtn {
+    display: none;
 }
 
+
+
 h1 {
-    font-size: 1.5em;
+    font-size: 1.7em;
 }
 
 h2 {
-    font-size:1.3em;
+    font-size: 1.5em;
     padding: 1%;
     text-align: center;
 }
@@ -43,12 +47,16 @@ p {
     text-align: center;
 }
 
-li {
+#navMenu li a {
+    display: none;
+}
+
+#headMenu li {
     display: inline;
 }
 
-li a {
-    padding: 34px 15px;
+#headMenu li a {
+    padding: 37px 14.5px;
     color: darkslategray;
     text-decoration: none;
 }
@@ -60,11 +68,11 @@ li a {
 
 .active {
     background-color: ivory;
-    
+
 }
 
 form.form {
-    display: table;  
+    display: table;
 }
 
 #formContainer {
@@ -74,38 +82,144 @@ form.form {
 
 div.form {
     display: table-row;
-  }
-  
-  label,
-  input {
+}
+
+label,
+input,
+select {
     display: table-cell;
     margin-bottom: 10px;
-  }
-  
-  label {
+}
+
+label {
     padding-left: 10px;
     padding-right: 10px;
-  }
+}
 
-  #formBtn {
+#formBtn {
     padding: 7px;
     margin: 10px;
     background-color: lavender;
     color: darkslateblue;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight:bold;
-  }
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
 
-  main {
+main {
     background-color: ivory;
     width: 60%;
     margin: 0 auto;
-    border-radius:3px;
+    border-radius: 3px;
     border-color: mistyrose;
     border-style: solid;
     border-right: 0;
-  }
+}
+
+.courseContent {
+    border-radius: 3px;
+    border-color: mistyrose;
+    border-style: solid;
+    line-height: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+#deleteBtn {
+    background-color: lavender;
+    border: 1px solid mistyrose;
+    text-decoration: none;
+    padding: 1%;
+    color: black;
+}
+
+#aboutText {
+    line-height: 1.5em;
+    max-width: 70ch;
+    text-align: left;
+    margin-left: 12.5%;
+}
+
+@media screen and (max-width: 1024px) {
+    #headMenu {
+        display: none;
+    }
+
+    #navMenu li a {
+        display: inline;
+    }
+
+    .menuBtn {
+        display: flex;
+        align-items: center;
+        padding: 8px 15px;
+        background-color: lavenderblush;
+        border: black ridge;
+        color: black;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+    }
+
+    .open {
+        position: absolute;
+        top: 3%;
+        right: 5%;
+    }
+
+    .close {
+        position: absolute;
+        top: 50%;
+        right: 27%;
+    }
+
+    .bars {
+        display: block;
+        width: 20px;
+        height: 3px;
+        background-color: black;
+        margin: 5px 3px;
+    }
+
+    .cross1 {
+        width: 20px;
+        transform: rotate(45deg);
+        position: relative;
+        top: 5px;
+    }
+
+    .cross2 {
+        width: 20px;
+        transform: rotate(135deg);
+        position: relative;
+        top: -3px;
+    }
 
 
- 
-  
+    #navMenu {
+        background-color: lavenderblush;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 200px;
+        display: none;
+    }
+
+    ul {
+        list-style-type: none;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        font-size: 1em;
+        text-align: left;
+    }
+
+    li {
+        padding: 0.8em;
+        width: 100%;
+    }
+
+    a:link,
+    a:visited {
+        color: black;
+        text-decoration: none;
+    }
+}
