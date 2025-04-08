@@ -1,17 +1,38 @@
 /**
  * Expressapplikation
+ * 
+ * av Anna Danielsson
  */
-const express = require("express")
-const app = express()
-const port = 3000
+const express = require("express");
+const app = express();
+const port = process.env.PORT||3000;
 const bodyParser = require("body-parser");
+const mysql = require("mysql");
+require("dotenv").config();
 
+//skapa variabel för kurslista
 const courseListEl =[{
-  courseName: "Backend-utveckling",
-  courseCode: "Dt207G",
-  progression: "B",
-  syllabus: "url",
+  courseName: "",
+  courseCode: "",
+  progression: "",
+  syllabus: "",
 }];
+
+//anslut till databas
+const connection = mysql.createConnection({
+  host : process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE
+});
+
+connection.connect((err) =>{
+  if(err){
+      console.error("Connection failed: " + err);
+      return;
+  }
+  console.log("Connected to MySQL!")
+})
 
 //body-parser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -63,12 +84,16 @@ app.post("/addcourse", (req, res) => {
   }
   
   if (errors.length===0) {
-  courseListEl.push({
-    courseName: newCourseName,
-    courseCode: newCourseCode,
-    progression: newProgression,
-    syllabus: newSyllabus
-  })
+    connection.query("INSERT INTO courses (coursename, coursecode, progression, syllabus) VALUES (?, ?, ?, ?)", 
+      [newCourseName, newCourseCode, newProgression, newSyllabus], (err, res) =>{
+          if(err) throw err;
+          console.log("Table updated!");
+          /*courseListEl.push({
+            courseName: newCourseName,
+            courseCode: newCourseCode,
+            progression: newProgression,
+            syllabus: newSyllabus*/
+      });
 newCourseName="";
 newCourseCode="";
 newProgression="";

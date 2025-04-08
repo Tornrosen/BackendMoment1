@@ -59,7 +59,8 @@ li a {
 }
 
 .active {
-    background-color: lavenderblush;
+    background-color: ivory;
+    
 }
 
 form.form {
@@ -93,6 +94,16 @@ div.form {
     color: darkslateblue;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight:bold;
+  }
+
+  main {
+    background-color: ivory;
+    width: 60%;
+    margin: 0 auto;
+    border-radius:3px;
+    border-color: mistyrose;
+    border-style: solid;
+    border-right: 0;
   }
 
 
